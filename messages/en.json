@@ -1,0 +1,29 @@
+{
+  "HomePage": {
+    "title": "Sovereign Finance for Real People",
+    "subtitle": "SOZU CAPITAL",
+    "description": "Building the financial OS for sovereign entrepreneurs — empowering communities to access credit, savings, and payments without banks.",
+    "learnCredit": "Learn About Credit",
+    "viewGitHub": "View on GitHub",
+    "credit": {
+      "title": "Sozu Credit",
+      "subtitle": "Credit built on trust — not paperwork",
+      "description": "Access credit through community vouching. No KYC required. Interest rates and credit amounts scale with your trust score. Good behavior unlocks bigger funds. Transparent requirements, no traditional credit checks."
+    },
+    "wallet": {
+      "title": "Sozu Wallet",
+      "subtitle": "Sovereign finance, seamless UX",
+      "description": "Stellar-powered self-custodial wallets with Passkey authentication. Designed for non-crypto users with zero friction. Your keys, your funds, your sovereignty. Privacy-first, trust-driven, globally interoperable."
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "From donation to empowerment",
+      "description": "Donors fund micro-credit batches. Funds flow into on-chain Sozu Vaults generating DeFi yield (10-15% APY). Yield supports trust-based credit lines for verified entrepreneurs. Every transaction visible through TRUFA Proof of Allocation."
+    },
+    "entrepreneurs": {
+      "title": "For Entrepreneurs",
+      "subtitle": "Access credit without banks",
+      "description": "Create a wallet instantly with no ID upload. Receive credit, track repayments, and build your Trust Score. Manage finances privately and self-custodially. Withdraw or pay through MercadoPago or any local anchor."
+    }
+  }
+}

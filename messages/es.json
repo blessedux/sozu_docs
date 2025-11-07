@@ -1,0 +1,29 @@
+{
+  "HomePage": {
+    "title": "Finanzas Soberanas para Gente Real",
+    "subtitle": "SOZU CAPITAL",
+    "description": "Construyendo el sistema operativo financiero para emprendedores soberanos — empoderando comunidades para acceder a crédito, ahorros y pagos sin bancos.",
+    "learnCredit": "Aprender sobre Crédito",
+    "viewGitHub": "Ver en GitHub",
+    "credit": {
+      "title": "Sozu Credit",
+      "subtitle": "Crédito construido sobre confianza — no papeleo",
+      "description": "Accede a crédito a través de aval comunitario. Sin KYC requerido. Las tasas de interés y montos de crédito escalan con tu puntaje de confianza. El buen comportamiento desbloquea fondos más grandes. Requisitos transparentes, sin verificaciones crediticias tradicionales."
+    },
+    "wallet": {
+      "title": "Cartera Sozu",
+      "subtitle": "Finanzas soberanas, UX fluida",
+      "description": "Carteras auto-custodiadas potenciadas por Stellar con autenticación Passkey. Diseñadas para usuarios no cripto con cero fricción. Tus claves, tus fondos, tu soberanía. Privacidad primero, impulsado por confianza, globalmente interoperable."
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "subtitle": "De donación a empoderamiento",
+      "description": "Los donantes financian lotes de microcrédito. Los fondos fluyen hacia Bóvedas Sozu en cadena generando rendimiento DeFi (10-15% APY). El rendimiento apoya líneas de crédito basadas en confianza para emprendedores verificados. Cada transacción visible a través de TRUFA Proof of Allocation."
+    },
+    "entrepreneurs": {
+      "title": "Para Emprendedores",
+      "subtitle": "Accede a crédito sin bancos",
+      "description": "Crea una cartera instantáneamente sin subir identificación. Recibe crédito, rastrea reembolsos y construye tu Puntaje de Confianza. Gestiona tus finanzas de forma privada y auto-custodiada. Retira o paga a través de MercadoPago o cualquier ancla local."
+    }
+  }
+}

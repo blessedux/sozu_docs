@@ -1,0 +1,29 @@
+{
+  "HomePage": {
+    "title": "Finance Souveraine pour les Gens Réels",
+    "subtitle": "SOZU CAPITAL",
+    "description": "Construire le système d'exploitation financier pour les entrepreneurs souverains — permettant aux communautés d'accéder au crédit, à l'épargne et aux paiements sans banques.",
+    "learnCredit": "En savoir plus sur le Crédit",
+    "viewGitHub": "Voir sur GitHub",
+    "credit": {
+      "title": "Sozu Credit",
+      "subtitle": "Crédit construit sur la confiance — pas de paperasse",
+      "description": "Accédez au crédit grâce au cautionnement communautaire. Pas de KYC requis. Les taux d'intérêt et les montants de crédit évoluent avec votre score de confiance. Le bon comportement débloque des fonds plus importants. Exigences transparentes, pas de vérifications de crédit traditionnelles."
+    },
+    "wallet": {
+      "title": "Portefeuille Sozu",
+      "subtitle": "Finance souveraine, UX fluide",
+      "description": "Portefeuilles auto-dépositaires alimentés par Stellar avec authentification Passkey. Conçus pour les utilisateurs non-crypto avec zéro friction. Vos clés, vos fonds, votre souveraineté. Confidentialité d'abord, axé sur la confiance, globalement interopérable."
+    },
+    "howItWorks": {
+      "title": "Comment Ça Marche",
+      "subtitle": "Du don à l'autonomisation",
+      "description": "Les donateurs financent des lots de microcrédit. Les fonds affluent vers les Coffres-forts Sozu en chaîne générant un rendement DeFi (10-15% APY). Le rendement soutient des lignes de crédit basées sur la confiance pour les entrepreneurs vérifiés. Chaque transaction visible via TRUFA Proof of Allocation."
+    },
+    "entrepreneurs": {
+      "title": "Pour les Entrepreneurs",
+      "subtitle": "Accédez au crédit sans banques",
+      "description": "Créez un portefeuille instantanément sans téléchargement d'identité. Recevez du crédit, suivez les remboursements et construisez votre Score de Confiance. Gérez vos finances de manière privée et auto-dépositaire. Retirez ou payez via MercadoPago ou toute ancre locale."
+    }
+  }
+}
