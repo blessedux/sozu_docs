@@ -9,7 +9,7 @@ import {
   Users
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { useLocale } from 'next-intl'
 
 interface DocLink {
@@ -114,13 +114,13 @@ export function DocsSidebar() {
   const docs = getDocs(locale)
   
   // Determine which section should be open based on current pathname
-  const getCurrentSection = () => {
+  const getCurrentSection = useCallback(() => {
     if (pathname.includes('/credit')) return 'credit'
     if (pathname.includes('/wallet')) return 'wallet'
     if (pathname.includes('/how-it-works')) return 'how-it-works'
     if (pathname.includes('/entrepreneurs')) return 'entrepreneurs'
     return null
-  }
+  }, [pathname])
 
   const currentSectionSlug = getCurrentSection()
   
@@ -147,7 +147,7 @@ export function DocsSidebar() {
         return updated
       })
     }
-  }, [pathname, locale])
+  }, [pathname, locale, getCurrentSection])
 
   const toggleSection = (title: string) => {
     setOpenSections((prev) => ({

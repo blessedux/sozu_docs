@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Link } from '@/i18n/routing'
 import Image from "next/image"
 import { SearchInline } from "@/components/search-inline"
 import { LanguageSwitcher } from "@/components/language-switcher"

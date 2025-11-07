@@ -52,11 +52,9 @@ function FloatingPaths({ position }: { position: number }) {
 }
 
 export function BackgroundPaths({
-    title = "Background Paths",
     children,
     className = "",
 }: {
-    title?: string;
     children?: React.ReactNode;
     className?: string;
 }) {

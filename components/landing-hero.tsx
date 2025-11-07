@@ -2,12 +2,9 @@
 
 import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
-import { Link } from '@/i18n/routing'
-import { useLocale } from 'next-intl'
 
 export function LandingHero() {
   const t = useTranslations('HomePage')
-  const locale = useLocale()
 
   return (
     <section className="flex flex-col items-center justify-center px-4 py-24 text-center md:px-6 md:py-32">

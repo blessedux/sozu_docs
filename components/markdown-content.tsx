@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef, useState } from 'react'
-import { MermaidDiagram } from './mermaid-diagram'
 import mermaid from 'mermaid'
 
 interface MarkdownContentProps {
