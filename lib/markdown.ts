@@ -87,13 +87,14 @@ export function getAllMarkdownFiles(locale: string): MarkdownFile[] {
       const slug = file.replace(/\.md$/, '').replace(/\//g, '/')
       const fullPath = path.join(localeDir, file)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data } = matter(fileContents)
+      const { data, content } = matter(fileContents)
 
       markdownFiles.push({
         slug,
         title: data.title || slug,
         description: data.description,
         content: '',
+        rawContent: content,
         frontMatter: data,
       })
     }
