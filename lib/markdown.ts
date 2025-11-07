@@ -3,7 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
-import remarkHtml from 'remark-html'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypeSlug from 'rehype-slug'
@@ -55,18 +54,8 @@ export async function getMarkdownFile(
       htmlContent = String(processedContent)
     } catch (processingError) {
       console.error(`Error processing markdown with rehype for ${slug}:`, processingError)
-      // Fallback to simple HTML processing if rehype fails
-      try {
-        const processedContent = await remark()
-          .use(remarkGfm)
-          .use(remarkHtml, { allowDangerousHtml: true })
-          .process(content)
-        htmlContent = String(processedContent)
-      } catch (htmlError) {
-        console.error(`Error processing markdown with remark-html for ${slug}:`, htmlError)
-        // Last resort: return raw content (shouldn't happen)
-        htmlContent = content
-      }
+      // Fallback: return raw content (shouldn't happen in normal operation)
+      htmlContent = content
     }
 
     return {
