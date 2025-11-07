@@ -1,6 +1,6 @@
 "use client"
 
-import { Link } from '@/i18n/routing'
+import { Link, usePathname } from '@/i18n/routing'
 import { 
   Wallet,
   ChevronDown,
@@ -9,7 +9,7 @@ import {
   Users
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useLocale } from 'next-intl'
 
 interface DocLink {
@@ -22,6 +22,7 @@ interface DocSection {
   items: DocLink[]
   icon?: React.ReactNode
   defaultOpen?: boolean
+  slug: string
 }
 
 const getDocs = (locale: string): DocSection[] => {
@@ -33,7 +34,8 @@ const getDocs = (locale: string): DocSection[] => {
       title: isES ? 'Sistema de Crédito' : isFR ? 'Système de Crédit' : 'Credit System',
       icon: <CreditCard className="h-5 w-5" />,
       defaultOpen: false,
-      items: [
+      slug: 'credit',
+    items: [
         { title: isES ? 'Resumen' : isFR ? 'Aperçu' : 'Overview', href: `/concepts/credit#overview` },
         { title: isES ? 'La Billetera Sozu' : isFR ? 'Le Portefeuille Sozu' : 'The Sozu Wallet', href: `/concepts/credit#the-sozu-wallet` },
         { title: isES ? 'Creación de Billetera Inteligente' : isFR ? 'Création de Portefeuille Intelligent' : 'Smart Wallet Creation', href: `/concepts/credit#smart-wallet-creation` },
@@ -51,6 +53,7 @@ const getDocs = (locale: string): DocSection[] => {
       title: isES ? 'Sozu Wallet' : isFR ? 'Sozu Wallet' : 'Sozu Wallet',
       icon: <Wallet className="h-5 w-5" />,
       defaultOpen: false,
+      slug: 'wallet',
       items: [
         { title: isES ? 'Resumen' : isFR ? 'Aperçu' : 'Overview', href: `/concepts/wallet#overview` },
         { title: isES ? 'Creación de Billetera Inteligente' : isFR ? 'Création de Portefeuille Intelligent' : 'Smart Wallet Creation', href: `/concepts/wallet#smart-wallet-creation` },
@@ -66,6 +69,7 @@ const getDocs = (locale: string): DocSection[] => {
       title: isES ? 'Cómo Funciona' : isFR ? 'Comment ça marche' : 'How It Works',
       icon: <Zap className="h-5 w-5" />,
       defaultOpen: false,
+      slug: 'how-it-works',
       items: [
         { title: isES ? 'Resumen' : isFR ? 'Aperçu' : 'Overview', href: `/concepts/how-it-works#overview` },
         { title: isES ? 'El Flujo' : isFR ? 'Le Flux' : 'The Flow', href: `/concepts/how-it-works#the-flow` },
@@ -84,6 +88,7 @@ const getDocs = (locale: string): DocSection[] => {
       title: isES ? 'Para Emprendedores' : isFR ? 'Pour les Entrepreneurs' : 'For Entrepreneurs',
       icon: <Users className="h-5 w-5" />,
       defaultOpen: false,
+      slug: 'entrepreneurs',
       items: [
         { title: isES ? 'Resumen' : isFR ? 'Aperçu' : 'Overview', href: `/concepts/entrepreneurs#overview` },
         { title: isES ? 'Comenzando' : isFR ? 'Pour Commencer' : 'Getting Started', href: `/concepts/entrepreneurs#getting-started` },
@@ -98,20 +103,51 @@ const getDocs = (locale: string): DocSection[] => {
         { title: isES ? 'Gestión Financiera' : isFR ? 'Gestion Financière' : 'Financial Management', href: `/concepts/entrepreneurs#financial-management` },
         { title: isES ? 'Historias de Éxito' : isFR ? 'Histoires de Succès' : 'Success Stories', href: `/concepts/entrepreneurs#success-stories` },
         { title: isES ? 'Soporte y Recursos' : isFR ? 'Support et Ressources' : 'Support & Resources', href: `/concepts/entrepreneurs#support--resources` },
-      ]
-    },
-  ]
+    ]
+  },
+]
 }
 
 export function DocsSidebar() {
   const locale = useLocale()
+  const pathname = usePathname()
   const docs = getDocs(locale)
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>(
-    docs.reduce((acc, section) => {
-      acc[section.title] = section.defaultOpen || false;
-      return acc;
-    }, {} as Record<string, boolean>)
-  );
+  
+  // Determine which section should be open based on current pathname
+  const getCurrentSection = () => {
+    if (pathname.includes('/credit')) return 'credit'
+    if (pathname.includes('/wallet')) return 'wallet'
+    if (pathname.includes('/how-it-works')) return 'how-it-works'
+    if (pathname.includes('/entrepreneurs')) return 'entrepreneurs'
+    return null
+  }
+
+  const currentSectionSlug = getCurrentSection()
+  
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {}
+    docs.forEach((section) => {
+      // Open the section that matches the current page
+      initial[section.title] = section.slug === currentSectionSlug
+    })
+    return initial
+  })
+
+  // Update open sections when pathname changes (e.g., when navigating via bottom buttons)
+  useEffect(() => {
+    const newCurrentSection = getCurrentSection()
+    if (newCurrentSection) {
+      setOpenSections((prev) => {
+        const updated = { ...prev }
+        // Open the section that matches the current page, close others
+        const currentDocs = getDocs(locale)
+        currentDocs.forEach((section) => {
+          updated[section.title] = section.slug === newCurrentSection
+        })
+        return updated
+      })
+    }
+  }, [pathname, locale])
 
   const toggleSection = (title: string) => {
     setOpenSections((prev) => ({
@@ -121,7 +157,7 @@ export function DocsSidebar() {
   };
 
   return (
-    <div className="flex flex-col space-y-2 bg-black text-white rounded-lg p-4">
+    <div className="flex flex-col space-y-2 bg-black/40 backdrop-blur-md text-white rounded-lg p-4 border border-white/10">
       {docs.map((section) => (
         <div key={section.title} className="space-y-1">
           <button
@@ -129,12 +165,12 @@ export function DocsSidebar() {
             className="w-full flex items-center justify-between py-2 px-3 rounded hover:bg-gray-800 transition-colors"
           >
             <div className="flex items-center space-x-3">
-              {section.icon}
-              <h4 className="font-medium text-sm">{section.title}</h4>
+              <div className="text-white">{section.icon}</div>
+              <h4 className="font-medium text-sm text-white">{section.title}</h4>
             </div>
             <ChevronDown 
               className={cn(
-                "h-4 w-4 transition-transform", 
+                "h-4 w-4 transition-transform text-white", 
                 openSections[section.title] ? "transform rotate-180" : ""
               )} 
             />

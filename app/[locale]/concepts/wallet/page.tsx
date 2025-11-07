@@ -1,6 +1,8 @@
 import { getMarkdownFile } from '@/lib/markdown'
 import { notFound } from 'next/navigation'
 import { Breadcrumb } from '@/components/breadcrumb'
+import { ArticleNavigation } from '@/components/article-navigation'
+import { MarkdownContent } from '@/components/markdown-content'
 
 export default async function WalletPage({
   params,
@@ -35,11 +37,10 @@ export default async function WalletPage({
         {file.description && (
           <p className="text-xl text-gray-400 mb-6 italic">{file.description}</p>
         )}
-        <div
-          className="markdown-content"
-          dangerouslySetInnerHTML={{ __html: file.content }}
-        />
+        <MarkdownContent html={file.content} />
       </article>
+      
+      <ArticleNavigation currentSlug="wallet" />
     </div>
   )
 }

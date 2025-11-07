@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['localhost'],
   },
+  experimental: {
+    reactCompiler: false,
+  },
 }
 
 export default withNextIntl(nextConfig)

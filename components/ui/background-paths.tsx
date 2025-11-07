@@ -114,8 +114,8 @@ export function BackgroundPaths({
                 </div>
                 {/* Animated vectors on top of logo */}
                 <div className="absolute inset-0 z-[2]">
-                    <FloatingPaths position={1} />
-                    <FloatingPaths position={-1} />
+                <FloatingPaths position={1} />
+                <FloatingPaths position={-1} />
                 </div>
             </div>
             <div className="relative z-10">

@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
+import remarkHtml from 'remark-html'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypeSlug from 'rehype-slug'
@@ -16,7 +17,7 @@ export interface MarkdownFile {
   description?: string
   content: string
   rawContent: string
-  frontMatter: Record<string, any>
+  frontMatter: Record<string, unknown>
 }
 
 export async function getMarkdownFile(
@@ -27,6 +28,7 @@ export async function getMarkdownFile(
     const fullPath = path.join(contentDirectory, locale, `${slug}.md`)
     
     if (!fs.existsSync(fullPath)) {
+      console.error(`Markdown file not found: ${fullPath}`)
       return null
     }
 
@@ -34,25 +36,44 @@ export async function getMarkdownFile(
     const { data, content } = matter(fileContents)
 
     // Process markdown to HTML with heading IDs
-    const processedContent = await remark()
-      .use(remarkGfm)
-      .use(remarkRehype, { allowDangerousHtml: true })
-      .use(rehypeSlug)
-      .use(rehypeAutolinkHeadings, {
-        behavior: 'wrap',
-        properties: {
-          className: ['anchor-link'],
-          ariaLabel: (node: any) => `Link to ${node.properties?.id || ''}`,
-        },
-      })
-      .use(rehypeStringify, { allowDangerousHtml: true })
-      .process(content)
+    let htmlContent: string
+    try {
+      // Use rehype for proper HTML structure with heading IDs
+      const processedContent = await remark()
+        .use(remarkGfm)
+        .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeSlug)
+        .use(rehypeAutolinkHeadings, {
+          behavior: 'wrap',
+          properties: {
+            className: ['anchor-link'],
+          },
+        })
+        .use(rehypeStringify, { allowDangerousHtml: true })
+        .process(content)
+      
+      htmlContent = String(processedContent)
+    } catch (processingError) {
+      console.error(`Error processing markdown with rehype for ${slug}:`, processingError)
+      // Fallback to simple HTML processing if rehype fails
+      try {
+        const processedContent = await remark()
+          .use(remarkGfm)
+          .use(remarkHtml, { allowDangerousHtml: true })
+          .process(content)
+        htmlContent = String(processedContent)
+      } catch (htmlError) {
+        console.error(`Error processing markdown with remark-html for ${slug}:`, htmlError)
+        // Last resort: return raw content (shouldn't happen)
+        htmlContent = content
+      }
+    }
 
     return {
       slug,
       title: data.title || slug,
       description: data.description,
-      content: processedContent.toString(),
+      content: htmlContent,
       rawContent: content,
       frontMatter: data,
     }

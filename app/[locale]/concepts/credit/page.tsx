@@ -1,8 +1,8 @@
 import { getMarkdownFile } from '@/lib/markdown'
 import { notFound } from 'next/navigation'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { useLocale } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { ArticleNavigation } from '@/components/article-navigation'
+import { MarkdownContent } from '@/components/markdown-content'
 
 export default async function CreditPage({
   params,
@@ -37,11 +37,10 @@ export default async function CreditPage({
         {file.description && (
           <p className="text-xl text-gray-400 mb-6 italic">{file.description}</p>
         )}
-        <div
-          className="markdown-content"
-          dangerouslySetInnerHTML={{ __html: file.content }}
-        />
+        <MarkdownContent html={file.content} />
       </article>
+      
+      <ArticleNavigation currentSlug="credit" />
     </div>
   )
 }

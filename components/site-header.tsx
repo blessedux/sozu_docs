@@ -43,12 +43,12 @@ export function SiteHeader() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 w-full border-b border-border/40 bg-black/95 backdrop-blur transition-transform duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full border-b border-white/20 bg-black/30 backdrop-blur-md transition-transform duration-300 ease-in-out ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="container flex h-16 items-center px-8 md:px-10 lg:px-16 max-w-screen-xl mx-auto">
-        <a href="https://sozu.capital" target="_blank" rel="noopener noreferrer" className="flex items-center">
+      <div className="container flex h-16 items-center px-8 md:px-10 lg:px-16 max-w-screen-xl mx-auto text-white">
+        <a href="https://sozu.capital" target="_blank" rel="noopener noreferrer" className="flex items-center" aria-label="Sozu Capital Homepage">
           <Image 
             src="/sozucredit_logo.png" 
             alt="Sozu Credit" 
