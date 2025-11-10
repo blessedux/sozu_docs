@@ -9,7 +9,7 @@ Sozu Capital's decentralized credit system transforms donations into empowerment
 
 ## Overview
 
-Sozu Credit enables accessible credit through community vouching, education, and DeFi integration. Donors fund micro-credit batches that flow into on-chain Sozu Vaults generating DeFi yield (10-20% APY). Yield supports trust-based credit lines for verified entrepreneurs who complete education requirements. Every transaction is visible on-chain through transparent allocation tracking.
+Sozu Credit enables accessible credit through community vouching, education, and DeFi integration. The system uses a trust-based credit model where entrepreneurs build trust scores through community vouching, complete financial education, and access credit without traditional banks. Funds flow into on-chain Sozu Vaults that automatically generate DeFi yield through DeFindex strategies. Every transaction is tracked on-chain with complete transparency and audit trails.
 
 ## The Flow
 
@@ -25,57 +25,111 @@ Sozu Credit enables accessible credit through community vouching, education, and
 - All donations are transparent and trackable on-chain
 - Real-time impact tracking through blockchain records
 
-### 2. Vault Allocation
+### 2. Vault Allocation & DeFindex Integration
 
-**Funds flow into on-chain Sozu Vaults** that automatically generate DeFi yield through Blend Protocol and Stellar AMM integration.
+**Funds flow into on-chain Sozu Vaults** that automatically generate DeFi yield through DeFindex strategies on the Stellar network.
 
 **Yield Generation:**
 
-- Automatic deposits to yield vaults (10-20% APY)
-- 90% of funds automatically deposited to Blend yield vaults
-- 10% maintained in hot wallet for immediate credit access
-- Real-time yield tracking and balance aggregation
-- Automatic rebalancing for optimal returns
-- Easy withdrawals anytime
+- Automatic deposits to DeFindex yield strategies
+- Position tracking for user shares in each strategy
+- Complete transaction history (deposits, withdrawals, harvests)
+- Real-time balance aggregation (wallet + vault combined)
+- Automatic position updates on every transaction
+- Easy withdrawals anytime with fast settlement
+
+**Position Tracking:**
+
+- User shares tracked per DeFindex strategy
+- Total deposited/withdrawn amounts recorded
+- Transaction status tracking (pending, confirmed, failed)
+- Complete audit trail for all vault operations
+- Historical position data for analytics
 
 **Supported Protocols:**
 
-- **Blend Protocol** — Stellar-based lending
-- **Stellar AMM** — Automated market maker pools
-- Future integrations with additional DeFi protocols
+- **DeFindex** — Stellar-based yield strategies
+- **Blend Protocol** — Stellar-based lending (future)
+- **Stellar AMM** — Automated market maker pools (future)
 
-### 3. Trust-Based Credit
+### 3. Trust Points & Vouching System
 
-**Yield supports trust-based credit lines** for verified entrepreneurs who complete education requirements and build trust scores through community vouching.
+**Trust-based credit system** where entrepreneurs build trust scores through community vouching, MaxFlow integration, and daily credits.
 
-**Credit Eligibility:**
+**Trust Points System:**
 
-- Complete financial literacy courses
-- Build trust score through community vouching
-- Receive credit based on trust score and vault position
-- Transparent terms with no traditional credit checks
-- No KYC required for vouching-based credit
+- **Initial Allocation**: New users start with 5 trust points (default)
+- **MaxFlow Integration**: Users with linked EVM addresses can receive 5-15 additional points based on their MaxFlow ego score
+  - Trust score 0-0.5: 5 points
+  - Trust score 0.5-1.0: 7 points
+  - Trust score 1.0-1.5: 10 points
+  - Trust score 1.5+: 15 points
+- **Daily Credits**: Users can claim 5 trust points daily
+- **Vouching**: Users can transfer trust points to others (minimum 1 point required)
+- **Referral System**: Users earn trust points for inviting new users
 
-**Trust Score System:**
+**Vouching Mechanism:**
 
-- Start with 5 trust points
-- Earn points through daily bonuses
-- Invite new users to grow your network
-- Receive vouches from community members
-- Higher trust scores = better credit terms
+- Users can vouch for others by transferring trust points
+- Each vouch is recorded in the `user_vouches` table
+- Automatic notifications when vouches are received
+- Vouch statistics tracked (given/received counts)
+- Self-vouching prevented
 
-### 4. Proof of Allocation
+### 4. Credit Eligibility & Trustworthy Vouches
 
-**Every transaction visible** through on-chain records, ensuring complete transparency and accountability.
+**Credit eligibility** is based on receiving trustworthy vouches from community members, not from referrals.
+
+**Credit Eligibility Requirements:**
+
+- **5+ Trustworthy Vouches**: Must receive 5 trust points from trustworthy users (not from referrals)
+- **Trustworthiness Rules**:
+  - Account must be at least 1 month old
+  - User must have wallet balance > 0
+  - If user has taken credit, must have at least one paid loan
+- **Auto-Check**: Trustworthiness is automatically checked when vouches are received
+- **Manual Review**: Reviewers can override auto-checks if needed
+
+**Credit Request System:**
+
+- **Minimum Requirements**:
+  - Trust points: ≥ 10 points
+  - Trustworthy vouches: ≥ 5 vouches
+  - MaxFlow ego score: ≥ 1.0 (if EVM address linked)
+  - Education: At least "Introduction to Micro-Credit" course completed
+- **Credit Limits** (calculated with multipliers):
+  - Base limit: $100
+  - Trust points: +$10 per point above 10
+  - Vouches: +$20 per vouch above 3
+  - MaxFlow ego: +$50 per point above 1.0
+  - Education: +$50 per completed course
+- **Interest Rates**:
+  - Base rate: 5% APR
+  - Trust score discount: -0.1% per trust point above 10
+  - Vouches discount: -0.2% per vouch above 3
+  - Range: 2% - 10% APR
+
+### 5. Proof of Allocation & Transparency
+
+**Every transaction visible** through on-chain records and database tracking, ensuring complete transparency and accountability.
 
 **Transparency Features:**
 
-- On-chain transaction records on Stellar blockchain
-- Real-time balance tracking via Stellar Horizon API
-- Yield distribution visibility
-- Credit allocation transparency
-- Trust score changes tracked on-chain
-- Complete audit trail for all operations
+- **On-Chain Records**: All transactions on Stellar blockchain
+- **Database Tracking**: Complete transaction history in database
+  - Position tracking for DeFindex strategies
+  - Transaction records (deposits, withdrawals, harvests)
+  - Vouch history and trustworthiness checks
+  - Credit requests and loan records
+- **Real-Time Tracking**: 
+  - Balance aggregation via Stellar Horizon API
+  - Position updates in real-time
+  - Transaction status monitoring
+- **Audit Trail**:
+  - All vault operations tracked
+  - Trust point transfers recorded
+  - Credit eligibility checks logged
+  - Complete user activity history
 
 ## The Ecosystem
 
@@ -185,39 +239,70 @@ Sozu Credit enables accessible credit through community vouching, education, and
 
 **DeFi Protocols:**
 
-- **Blend Protocol** — Institutional-grade yield generation
-- **Stellar AMM** — Automated market making
-- Overcollateralized lending
-- Impermanent loss protection
+- **DeFindex** — Stellar-based yield strategies (active)
+- **Blend Protocol** — Stellar-based lending (future)
+- **Stellar AMM** — Automated market making (future)
 
-### Smart Contracts & Vaults
+### Database Schema
 
-**Sozu Vaults:**
+**Core Tables:**
 
-- Automated deposit allocation
-- Yield generation and distribution (10-20% APY)
-- Credit line management
-- Trust score integration
-- Real-time balance aggregation
+- **`user_vouches`** — Tracks user-to-user vouches with trustworthiness checks
+- **`notifications`** — System notifications (vouch_received, daily_credit_available, credit_eligible)
+- **`defindex_positions`** — User positions (shares) in DeFindex strategies
+- **`defindex_transactions`** — All vault transactions (deposits, withdrawals, harvests)
+- **`credit_requests`** — Credit request applications
+- **`loans`** — Active loans and repayment tracking
+- **`loan_payments`** — Loan payment history
+- **`credit_request_vouches`** — Vouches for credit requests
+
+**Database Functions:**
+
+- `is_user_trustworthy()` — Checks if user meets trustworthiness criteria
+- `get_trustworthy_vouches_count()` — Returns count of trustworthy vouches
+- `can_apply_for_credit()` — Checks credit eligibility
+- `update_position_on_deposit()` — Updates position after deposit
+- `update_position_on_withdrawal()` — Updates position after withdrawal
+
+### API Endpoints
+
+**Trust Points & Vouching:**
+
+- `POST /api/wallet/vouch` — Transfer trust points (vouching)
+- `GET /api/wallet/vouches/received` — Get vouches received
+- `GET /api/wallet/vouches/pending-review` — Get vouches pending review
+- `POST /api/wallet/vouches/review` — Review and mark vouches as trustworthy
+- `GET /api/wallet/credit-eligibility` — Check credit eligibility
+- `GET /api/wallet/trust-points` — Get trust points with statistics
+- `POST /api/wallet/trust-points/initialize` — Initialize trust points from MaxFlow
+
+**DeFindex Vault:**
+
+- `POST /api/wallet/defindex/deposit` — Deposit to DeFindex strategy
+- `GET /api/wallet/defindex/position` — Get user position
+- `GET /api/wallet/defindex/transactions` — Get transaction history
 
 **Credit System:**
 
-- Trust-based credit scoring
-- Community vouching mechanism
-- Education verification
-- Repayment tracking
-- Transparent terms and rates
+- `POST /api/credit/request` — Create credit request
+- `GET /api/credit/requests` — Get user's credit requests
+- `POST /api/credit/requests/[id]/vouch` — Vouch for credit request
+- `POST /api/credit/loans/[id]/pay` — Make loan payment
 
 ## User Journey
 
 ### New User Journey
 
 1. **Sign Up** → Tap fingerprint/face ID (Passkeys) → Wallet created instantly via Turnkey SDK
-2. **Get Invite Link** → Share with others → Receive trust points
-3. **Receive USDC** → Funds auto-deposit to yield vault → Earn 10-20% APY
-4. **Complete Education** → Learn DeFi basics → Unlock credit eligibility
-5. **Get Vouched** → Build trust score → Access credit pools
-6. **Request Credit** → Community vouching determines terms → Receive funds
+2. **Initial Trust Points** → Receive 5 trust points (default) or 5-15 points if linking EVM address with MaxFlow ego score
+3. **Get Invite Link** → Share with others → Earn trust points for referrals
+4. **Claim Daily Credits** → Claim 5 trust points daily
+5. **Receive USDC** → Funds auto-deposit to DeFindex strategies → Position tracked automatically
+6. **Get Vouched** → Receive trust points from community members → Trustworthiness auto-checked
+7. **Complete Education** → Learn DeFi basics → Unlock credit eligibility
+8. **Check Eligibility** → System verifies 5+ trustworthy vouches
+9. **Request Credit** → Submit credit request → Community can vouch for your request
+10. **Receive Credit** → Approved request → Funds disbursed to Stellar wallet
 
 ### Existing User Flow
 
@@ -239,11 +324,16 @@ Sozu Credit enables accessible credit through community vouching, education, and
 ### For Entrepreneurs
 
 1. **Create Wallet** with passkey authentication (biometric)
-2. **Complete Education** courses to unlock credit
-3. **Build Trust Score** through community vouching
-4. **Receive Credit** based on trust and vault position
-5. **Repay Credit** and build credit history
-6. **Track Progress** through transparent dashboard
+2. **Initialize Trust Points** — Receive 5 points or 5-15 points if linking EVM address
+3. **Build Trust Score** — Claim daily credits, get vouched, invite users
+4. **Get Trustworthy Vouches** — Receive 5+ vouches from trustworthy users
+5. **Complete Education** — At least "Introduction to Micro-Credit" course
+6. **Check Eligibility** — System verifies 5+ trustworthy vouches
+7. **Request Credit** — Submit credit request with amount and purpose
+8. **Community Review** — Other users can vouch for your request
+9. **Receive Credit** — Approved request → Funds disbursed to wallet
+10. **Repay Credit** — Track payments and build credit history
+11. **Track Progress** — View positions, transactions, and trust score
 
 ## Security & Privacy
 
@@ -288,74 +378,96 @@ Complete courses to unlock credit opportunities:
 - Earn certifications
 - Access advanced features
 
-## Community Vouching
+## Community Vouching System
 
 ### How It Works
 
-1. **Earn Trust Points** — Start with 5 points, earn more through:
+1. **Earn Trust Points** — Multiple ways to build your trust score:
 
-   - Daily bonuses
-   - Inviting new users
-   - Receiving vouches from others
+   - **Initial Allocation**: 5 points (default) or 5-15 points based on MaxFlow ego score
+   - **Daily Credits**: Claim 5 points daily
+   - **Referrals**: Earn points for inviting new users
+   - **Vouches**: Receive trust points from community members
 
-2. **Vouch for Others** — Give trust points to users you believe in:
+2. **Vouch for Others** — Transfer trust points to users you believe in:
 
-   - Each vouch increases their trust score
-   - Your vouches build your reputation
-   - Transparent trust graph visible to all
+   - Minimum 1 trust point required to vouch
+   - Points transfer from sender to receiver
+   - Each vouch recorded in database
+   - Automatic notifications sent to receiver
+   - Self-vouching prevented
+   - Vouch statistics tracked (given/received)
 
-3. **Unlock Credit** — Higher trust scores = better credit terms:
-   - Community vouching replaces traditional credit checks
-   - Transparent trust graph
-   - No KYC required
+3. **Trustworthiness Check** — Automatic verification when vouches are received:
 
-### Invite System
+   - **Account Age**: Voucher must be at least 1 month old
+   - **Wallet Balance**: Voucher must have balance > 0
+   - **Credit History**: If voucher has taken credit, must have paid back at least one loan
+   - **Auto-Check**: Runs automatically via database trigger
+   - **Manual Review**: Reviewers can override auto-checks
 
-- **Share Your Invite Link** — Get unique URL to share
-- **New Users Join** — They can vouch for you or you can vouch for them
-- **Build Your Network** — Stronger network = more credit opportunities
+4. **Unlock Credit** — Credit eligibility based on trustworthy vouches:
+
+   - Need 5+ trustworthy vouches (not from referrals)
+   - Only vouches from trustworthy users count
+   - Transparent trustworthiness verification
+   - No KYC required for vouching-based credit
+
+### Credit Request Flow
+
+1. **Check Eligibility** → System verifies 5+ trustworthy vouches
+2. **Submit Request** → Fill out credit request form with amount and purpose
+3. **Community Review** → Other users can vouch for your request
+4. **Approval** → Automated or manual approval based on criteria
+5. **Disbursement** → Funds sent to your Stellar wallet
+6. **Repayment** → Track payments and build credit history
 
 ### Trust Score Benefits
 
-- Access to credit pools
-- Better interest rates
-- Higher credit limits
-- Priority support
-- Governance participation
+- **Credit Access**: Higher trust scores unlock credit eligibility
+- **Better Terms**: Lower interest rates with more trust points
+- **Higher Limits**: More credit available with better scores
+- **Network Building**: Stronger network = more opportunities
+- **Reputation**: Transparent trust graph visible to all
 
 ## DeFi Integration
 
-### Yield Vaults (10-20% APY)
+### DeFindex Yield Strategies
 
 **Automatic Deposits:**
 
-- Incoming USDC automatically goes to vault
+- Incoming USDC automatically deposited to DeFindex strategies
+- Position tracking for user shares in each strategy
 - No manual intervention required
 - Seamless user experience
 
-**High Yield:**
+**Position Management:**
 
-- Earn 10-20% APY on idle funds
-- Real-time yield tracking
-- Daily earnings updates
+- User shares tracked per DeFindex strategy
+- Total deposited/withdrawn amounts recorded
+- Transaction history (deposits, withdrawals, harvests)
+- Transaction status tracking (pending, confirmed, failed)
+- Real-time position updates
+
+**Real-Time Tracking:**
+
+- Combined wallet + vault balance aggregation
+- Position updates on every transaction
+- Historical position data for analytics
+- Complete audit trail for all operations
 
 **Easy Withdrawals:**
 
 - Access your funds anytime
-- Fast settlement on Stellar
+- Fast settlement on Stellar network
 - Low transaction fees
-
-**Real-Time Tracking:**
-
-- See your earnings grow daily
-- Combined wallet + vault balance
-- Transparent yield distribution
+- Position automatically updated on withdrawal
 
 ### Supported Protocols
 
-- **Blend Protocol** — Stellar-based lending
-- **Stellar AMM** — Automated market maker pools
-- **Future Integrations** — Additional protocols coming soon
+- **DeFindex** — Stellar-based yield strategies (active)
+- **Blend Protocol** — Stellar-based lending (future)
+- **Stellar AMM** — Automated market maker pools (future)
 
 ## Transparency & Accountability
 
