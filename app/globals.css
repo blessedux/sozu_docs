@@ -228,24 +228,45 @@ body {
   
   /* Code */
   .prose code {
-    @apply bg-gray-800 text-gray-200 rounded px-1.5 py-0.5 font-mono text-sm;
+    @apply text-gray-200 rounded px-1.5 py-0.5 font-mono text-sm;
+    background-color: rgba(31, 41, 55, 0.7); /* gray-800 with transparency */
   }
   
   .bg-black .prose code {
-    @apply bg-gray-800 text-gray-200 rounded px-1.5 py-0.5 font-mono text-sm;
+    @apply text-gray-200 rounded px-1.5 py-0.5 font-mono text-sm;
+    background-color: rgba(31, 41, 55, 0.7); /* gray-800 with transparency */
   }
   
   /* Code blocks */
   .prose pre {
-    @apply bg-gray-900 border border-gray-700 p-4 rounded-lg overflow-x-auto my-6;
+    @apply border border-gray-700 p-4 rounded-lg overflow-x-auto my-6;
+    background-color: rgba(17, 24, 39, 0.8); /* gray-900 with transparency */
   }
   
   .bg-black .prose pre {
-    @apply bg-gray-900 border border-gray-700 p-4 rounded-lg overflow-x-auto my-6;
+    @apply border border-gray-700 p-4 rounded-lg overflow-x-auto my-6;
+    background-color: rgba(17, 24, 39, 0.8); /* gray-900 with transparency */
   }
   
   .prose pre code {
     @apply bg-transparent p-0 text-gray-200;
+  }
+  
+  /* Syntax highlighting - ensure no blue backgrounds */
+  .prose pre .hljs,
+  .prose pre code {
+    background-color: transparent !important;
+  }
+  
+  /* Override any highlight.js blue backgrounds */
+  .prose pre .hljs-keyword,
+  .prose pre .hljs-selector-tag,
+  .prose pre .hljs-title,
+  .prose pre .hljs-section,
+  .prose pre .hljs-doctag,
+  .prose pre .hljs-name,
+  .prose pre .hljs-strong {
+    background-color: transparent !important;
   }
   
   /* Horizontal rules */
