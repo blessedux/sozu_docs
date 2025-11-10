@@ -121,7 +121,7 @@ Sozu Credit enables accessible credit through community vouching, education, and
   - Transaction records (deposits, withdrawals, harvests)
   - Vouch history and trustworthiness checks
   - Credit requests and loan records
-- **Real-Time Tracking**: 
+- **Real-Time Tracking**:
   - Balance aggregation via Stellar Horizon API
   - Position updates in real-time
   - Transaction status monitoring
