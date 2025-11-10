@@ -362,19 +362,29 @@ body {
   
   /* Anchor links for headings */
   .prose .anchor-link {
-    @apply no-underline opacity-0 transition-opacity;
-  }
-  
-  .prose h1:hover .anchor-link,
-  .prose h2:hover .anchor-link,
-  .prose h3:hover .anchor-link,
-  .prose h4:hover .anchor-link,
-  .prose h5:hover .anchor-link,
-  .prose h6:hover .anchor-link {
-    @apply opacity-100;
+    @apply no-underline text-white transition-colors;
   }
   
   .prose .anchor-link:hover {
+    @apply text-blue-400;
+  }
+  
+  /* Ensure headings wrapped in anchor links are visible */
+  .prose h1 .anchor-link,
+  .prose h2 .anchor-link,
+  .prose h3 .anchor-link,
+  .prose h4 .anchor-link,
+  .prose h5 .anchor-link,
+  .prose h6 .anchor-link {
+    @apply text-white;
+  }
+  
+  .prose h1 .anchor-link:hover,
+  .prose h2 .anchor-link:hover,
+  .prose h3 .anchor-link:hover,
+  .prose h4 .anchor-link:hover,
+  .prose h5 .anchor-link:hover,
+  .prose h6 .anchor-link:hover {
     @apply text-blue-400;
   }
   
