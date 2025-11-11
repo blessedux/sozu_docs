@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "Sozu Capital Documentation",
   description: "Official documentation for Sozu Capital - Decentralized credit system with auto-deposit logic and Blend protocol integration",
   icons: {
-    icon: '/sozucredit_logo.png',
-    apple: '/sozucredit_logo.png',
+    icon: '/sozucapital_logo.png',
+    apple: '/sozucapital_logo.png',
   },
 }
 
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/sozucredit_logo.png" />
+        <link rel="icon" href="/sozucapital_logo.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

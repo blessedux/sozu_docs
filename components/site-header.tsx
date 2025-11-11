@@ -49,8 +49,8 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center px-8 md:px-10 lg:px-16 max-w-screen-xl mx-auto text-white">
         <a href="https://sozu.capital" target="_blank" rel="noopener noreferrer" className="flex items-center" aria-label="Sozu Capital Homepage">
           <Image 
-            src="/sozucredit_logo.png" 
-            alt="Sozu Credit" 
+            src="/sozucapital_logo.png" 
+            alt="Sozu Capital" 
             width={32} 
             height={32}
             className="h-8 w-auto"

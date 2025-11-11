@@ -101,8 +101,8 @@ export function BackgroundPaths({
                         }}
                     >
                         <Image
-                            src="/sozucredit_logo.png"
-                            alt="Sozu Credit"
+                            src="/sozucapital_logo.png"
+                            alt="Sozu Capital"
                             width={200}
                             height={200}
                             className="w-56 h-56 md:w-76 md:h-76 lg:w-96 lg:h-96"
