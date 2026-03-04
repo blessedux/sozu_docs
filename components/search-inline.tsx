@@ -15,6 +15,16 @@ const getSearchablePages = (locale: string) => {
   
   const pages: Array<{ title: string; path: string; type: 'section' | 'item' }> = []
   
+  // Overview & SozuPay MVP-aligned sections
+  pages.push({ title: isES ? 'Resumen' : isFR ? 'Aperçu' : 'Overview', path: `/concepts/overview`, type: 'section' })
+  pages.push({ title: isES ? 'Arquitectura' : isFR ? 'Architecture' : 'Architecture', path: `/concepts/architecture`, type: 'section' })
+  pages.push({ title: isES ? 'Contratos' : isFR ? 'Contrats' : 'Contracts', path: `/concepts/contracts`, type: 'section' })
+  pages.push({ title: isES ? 'Planificación' : isFR ? 'Planification' : 'Planning', path: `/concepts/planning`, type: 'section' })
+  pages.push({ title: isES ? 'Integraciones' : isFR ? 'Intégrations' : 'Integrations', path: `/concepts/integrations`, type: 'section' })
+  pages.push({ title: isES ? 'Requisitos' : isFR ? 'Exigences' : 'Requirements', path: `/concepts/requirements`, type: 'section' })
+  pages.push({ title: isES ? 'Operaciones' : isFR ? 'Opérations' : 'Operations', path: `/concepts/operations`, type: 'section' })
+  pages.push({ title: isES ? 'Referencia' : isFR ? 'Référence' : 'Reference', path: `/concepts/reference`, type: 'section' })
+  
   // Credit System section
   pages.push({ 
     title: isES ? 'Sistema de Crédito' : isFR ? 'Système de Crédit' : 'Credit System', 
@@ -66,9 +76,9 @@ const getSearchablePages = (locale: string) => {
   pages.push({ title: isES ? 'Transparencia y Responsabilidad' : isFR ? 'Transparence et Responsabilité' : 'Transparency & Accountability', path: `/concepts/how-it-works#transparency--accountability`, type: 'item' })
   pages.push({ title: isES ? 'Métricas de Impacto' : isFR ? 'Métriques d\'Impact' : 'Impact Metrics', path: `/concepts/how-it-works#impact-metrics`, type: 'item' })
   
-  // For Entrepreneurs section
+  // Sozu for Business section
   pages.push({ 
-    title: isES ? 'Para Emprendedores' : isFR ? 'Pour les Entrepreneurs' : 'For Entrepreneurs', 
+    title: 'Sozu for Business', 
     path: `/concepts/entrepreneurs`,
     type: 'section'
   })

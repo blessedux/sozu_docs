@@ -20,7 +20,7 @@ export default async function EntrepreneursPage({
   const breadcrumbs = {
     home: locale === 'es' ? 'Inicio' : locale === 'fr' ? 'Accueil' : 'Home',
     concepts: locale === 'es' ? 'Conceptos' : locale === 'fr' ? 'Concepts' : 'Concepts',
-    entrepreneurs: locale === 'es' ? 'Emprendedores' : locale === 'fr' ? 'Entrepreneurs' : 'Entrepreneurs',
+    business: locale === 'es' ? 'Sozu for Business' : locale === 'fr' ? 'Sozu for Business' : 'Sozu for Business',
   }
 
   return (
@@ -29,7 +29,7 @@ export default async function EntrepreneursPage({
         items={[
           { title: breadcrumbs.home, href: `/` },
           { title: breadcrumbs.concepts, href: `/concepts` },
-          { title: breadcrumbs.entrepreneurs, href: `/concepts/entrepreneurs` }
+          { title: breadcrumbs.business, href: `/concepts/entrepreneurs` }
         ]} 
       />
       

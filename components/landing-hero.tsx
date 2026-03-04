@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
 import { Button } from "@/components/ui/button"
 
 export function LandingHero() {
@@ -16,10 +17,10 @@ export function LandingHero() {
           {t('description')}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button asChild className="bg-[#587CE9] hover:bg-[#4367d6]">
-            <a href="https://credit.sozu.capital" target="_blank" rel="noopener noreferrer">
-              Open Sozu Wallet
-            </a>
+          <Button asChild className="bg-[#2e7c94] hover:bg-[#246175]">
+            <Link href="/concepts/overview">
+              {t('cta')}
+            </Link>
           </Button>
           <Button variant="outline" className="border-gray-700" asChild>
             <a href="https://github.com/blessedux/SozuCredit" target="_blank" rel="noopener noreferrer">

@@ -24,8 +24,10 @@ export async function getMarkdownFile(
   slug: string
 ): Promise<MarkdownFile | null> {
   try {
-    const fullPath = path.join(contentDirectory, locale, `${slug}.md`)
-    
+    let fullPath = path.join(contentDirectory, locale, `${slug}.md`)
+    if (!fs.existsSync(fullPath) && locale !== 'en') {
+      fullPath = path.join(contentDirectory, 'en', `${slug}.md`)
+    }
     if (!fs.existsSync(fullPath)) {
       console.error(`Markdown file not found: ${fullPath}`)
       return null

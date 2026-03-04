@@ -10,7 +10,7 @@ export default function ConceptsLayout({
 }) {
   return (
     <div className="flex min-h-screen flex-col relative">
-      <InteractiveDots dotColor="#F44336" dotSize={14} />
+      <InteractiveDots dotColor="#246175" dotSize={14} />
       <div className="relative z-10 flex min-h-screen flex-col">
         <SiteHeader />
         <div className="container flex-1 pt-16">

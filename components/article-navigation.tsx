@@ -9,10 +9,18 @@ interface ArticleNavigationProps {
 }
 
 const articleOrder = [
+  { slug: 'overview', title: { en: 'Overview', es: 'Resumen', fr: 'Aperçu' } },
+  { slug: 'how-it-works', title: { en: 'How It Works', es: 'Cómo Funciona', fr: 'Comment ça marche' } },
+  { slug: 'architecture', title: { en: 'Architecture', es: 'Arquitectura', fr: 'Architecture' } },
+  { slug: 'contracts', title: { en: 'Contracts', es: 'Contratos', fr: 'Contrats' } },
+  { slug: 'planning', title: { en: 'Planning', es: 'Planificación', fr: 'Planification' } },
+  { slug: 'integrations', title: { en: 'Integrations', es: 'Integraciones', fr: 'Intégrations' } },
+  { slug: 'requirements', title: { en: 'Requirements', es: 'Requisitos', fr: 'Exigences' } },
+  { slug: 'operations', title: { en: 'Operations', es: 'Operaciones', fr: 'Opérations' } },
+  { slug: 'reference', title: { en: 'Reference', es: 'Referencia', fr: 'Référence' } },
   { slug: 'credit', title: { en: 'Credit System', es: 'Sistema de Crédito', fr: 'Système de Crédit' } },
   { slug: 'wallet', title: { en: 'Sozu Wallet', es: 'Sozu Wallet', fr: 'Sozu Wallet' } },
-  { slug: 'how-it-works', title: { en: 'How It Works', es: 'Cómo Funciona', fr: 'Comment ça marche' } },
-  { slug: 'entrepreneurs', title: { en: 'For Entrepreneurs', es: 'Para Emprendedores', fr: 'Pour les Entrepreneurs' } },
+  { slug: 'entrepreneurs', title: { en: 'Sozu for Business', es: 'Sozu for Business', fr: 'Sozu for Business' } },
 ]
 
 export function ArticleNavigation({ currentSlug }: ArticleNavigationProps) {

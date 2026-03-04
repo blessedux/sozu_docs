@@ -2,18 +2,18 @@
 
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/routing'
-import { ArrowUpRight, CreditCard, Wallet, Zap, Users } from "lucide-react"
+import { ArrowUpRight, CreditCard, Wallet, LayoutDashboard, Building2 } from "lucide-react"
 
 export function NavigationCards() {
   const t = useTranslations('HomePage')
 
   const cards = [
     {
-      href: `/concepts/credit`,
-      icon: <CreditCard className="h-6 w-6" />,
-      title: t('credit.title'),
-      subtitle: t('credit.subtitle'),
-      description: t('credit.description'),
+      href: `/concepts/overview`,
+      icon: <LayoutDashboard className="h-6 w-6" />,
+      title: t('sozuPay.title'),
+      subtitle: t('sozuPay.subtitle'),
+      description: t('sozuPay.description'),
     },
     {
       href: `/concepts/wallet`,
@@ -23,18 +23,18 @@ export function NavigationCards() {
       description: t('wallet.description'),
     },
     {
-      href: `/concepts/how-it-works`,
-      icon: <Zap className="h-6 w-6" />,
-      title: t('howItWorks.title'),
-      subtitle: t('howItWorks.subtitle'),
-      description: t('howItWorks.description'),
+      href: `/concepts/credit`,
+      icon: <CreditCard className="h-6 w-6" />,
+      title: t('credit.title'),
+      subtitle: t('credit.subtitle'),
+      description: t('credit.description'),
     },
     {
       href: `/concepts/entrepreneurs`,
-      icon: <Users className="h-6 w-6" />,
-      title: t('entrepreneurs.title'),
-      subtitle: t('entrepreneurs.subtitle'),
-      description: t('entrepreneurs.description'),
+      icon: <Building2 className="h-6 w-6" />,
+      title: t('business.title'),
+      subtitle: t('business.subtitle'),
+      description: t('business.description'),
     },
   ]
 

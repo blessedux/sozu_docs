@@ -1,29 +1,35 @@
 {
   "HomePage": {
-    "title": "Sovereign Finance for Real People",
+    "title": "Sozu: Digital dollars that work with you",
     "subtitle": "SOZU CAPITAL",
-    "description": "Building the financial OS for sovereign entrepreneurs — empowering communities to access credit, savings, and payments without banks.",
+    "description": "An internet-native way to use money — transparent, programmable, yours.",
+    "cta": "Open Sozu docs",
     "learnCredit": "Learn About Credit",
     "viewGitHub": "View on GitHub",
+    "sozuPay": {
+      "title": "Sozu Pay",
+      "subtitle": "NGO + Business dashboards for stablecoin payments",
+      "description": "Manage disbursements, beneficiaries, and payouts with DeFi yield baked in. NGO dashboard for microcredit; Business dashboard for merchants. One stack for programmable dollar payments."
+    },
     "credit": {
       "title": "Sozu Credit",
       "subtitle": "Credit built on trust — not paperwork",
-      "description": "Access credit through community vouching. No KYC required. Interest rates and credit amounts scale with your trust score. Good behavior unlocks bigger funds. Transparent requirements, no traditional credit checks."
+      "description": "Access credit through community vouching. Interest rates and credit amounts scale with your trust score. Good behavior unlocks bigger funds. Transparent requirements and terms."
     },
     "wallet": {
       "title": "Sozu Wallet",
-      "subtitle": "Sovereign finance, seamless UX",
-      "description": "Stellar-powered self-custodial wallets with Passkey authentication. Designed for non-crypto users with zero friction. Your keys, your funds, your sovereignty. Privacy-first, trust-driven, globally interoperable."
+      "subtitle": "Auto-compounding yield, self-custodial",
+      "description": "Stellar-powered USDC wallet with Passkey authentication. Idle balance earns DeFi yield (auto-compounding). Your keys, your funds. Built for recipients and everyday use."
     },
     "howItWorks": {
       "title": "How It Works",
       "subtitle": "From donation to empowerment",
       "description": "Donors fund micro-credit batches. Funds flow into on-chain Sozu Vaults generating DeFi yield (10-15% APY). Yield supports trust-based credit lines for verified entrepreneurs. Every transaction visible through TRUFA Proof of Allocation."
     },
-    "entrepreneurs": {
-      "title": "For Entrepreneurs",
-      "subtitle": "Access credit without banks",
-      "description": "Create a wallet instantly with no ID upload. Receive credit, track repayments, and build your Trust Score. Manage finances privately and self-custodially. Withdraw or pay through MercadoPago or any local anchor."
+    "business": {
+      "title": "Sozu for Business",
+      "subtitle": "Merchant settlement and revenue in stablecoins",
+      "description": "Receive payments in USDC, track revenue, and manage payouts from one dashboard. DeFi yield on idle balance. Built for SMEs and operators in Latam."
     }
   }
 }

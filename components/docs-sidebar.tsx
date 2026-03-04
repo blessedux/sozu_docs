@@ -6,7 +6,15 @@ import {
   ChevronDown,
   CreditCard,
   Zap,
-  Users
+  Building2,
+  BookOpen,
+  Layout,
+  FileCode,
+  Calendar,
+  Plug,
+  FileCheck,
+  Settings,
+  BookMarked
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState, useEffect, useCallback } from "react"
@@ -30,6 +38,78 @@ const getDocs = (locale: string): DocSection[] => {
   const isFR = locale === 'fr'
   
   return [
+    {
+      title: isES ? 'Resumen' : isFR ? 'Aperçu' : 'Overview',
+      icon: <BookOpen className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'overview',
+      items: [
+        { title: isES ? 'Estrategia y producto' : isFR ? 'Stratégie et produit' : 'Strategy & product', href: `/concepts/overview` },
+      ]
+    },
+    {
+      title: isES ? 'Arquitectura' : isFR ? 'Architecture' : 'Architecture',
+      icon: <Layout className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'architecture',
+      items: [
+        { title: isES ? 'Diseño del sistema' : isFR ? 'Conception du système' : 'System design', href: `/concepts/architecture` },
+      ]
+    },
+    {
+      title: isES ? 'Contratos' : isFR ? 'Contrats' : 'Contracts',
+      icon: <FileCode className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'contracts',
+      items: [
+        { title: isES ? 'Soroban y testnet' : isFR ? 'Soroban et testnet' : 'Soroban & testnet', href: `/concepts/contracts` },
+      ]
+    },
+    {
+      title: isES ? 'Planificación' : isFR ? 'Planification' : 'Planning',
+      icon: <Calendar className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'planning',
+      items: [
+        { title: isES ? 'Sprint y planes NGO' : isFR ? 'Sprint et plans NGO' : 'Sprint & NGO plans', href: `/concepts/planning` },
+      ]
+    },
+    {
+      title: isES ? 'Integraciones' : isFR ? 'Intégrations' : 'Integrations',
+      icon: <Plug className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'integrations',
+      items: [
+        { title: isES ? 'E-commerce y E2E' : isFR ? 'E-commerce et E2E' : 'E-commerce & E2E', href: `/concepts/integrations` },
+      ]
+    },
+    {
+      title: isES ? 'Requisitos' : isFR ? 'Exigences' : 'Requirements',
+      icon: <FileCheck className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'requirements',
+      items: [
+        { title: isES ? 'NFR y socio' : isFR ? 'NFR et partenaire' : 'NFR & partner', href: `/concepts/requirements` },
+      ]
+    },
+    {
+      title: isES ? 'Operaciones' : isFR ? 'Opérations' : 'Operations',
+      icon: <Settings className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'operations',
+      items: [
+        { title: isES ? 'Runbooks' : isFR ? 'Runbooks' : 'Runbooks', href: `/concepts/operations` },
+      ]
+    },
+    {
+      title: isES ? 'Referencia' : isFR ? 'Référence' : 'Reference',
+      icon: <BookMarked className="h-5 w-5" />,
+      defaultOpen: false,
+      slug: 'reference',
+      items: [
+        { title: isES ? 'Schema y fases' : isFR ? 'Schema et phases' : 'Schema & phases', href: `/concepts/reference` },
+      ]
+    },
     {
       title: isES ? 'Sistema de Crédito' : isFR ? 'Système de Crédit' : 'Credit System',
       icon: <CreditCard className="h-5 w-5" />,
@@ -85,8 +165,8 @@ const getDocs = (locale: string): DocSection[] => {
       ]
     },
     {
-      title: isES ? 'Para Emprendedores' : isFR ? 'Pour les Entrepreneurs' : 'For Entrepreneurs',
-      icon: <Users className="h-5 w-5" />,
+      title: isES ? 'Sozu for Business' : isFR ? 'Sozu for Business' : 'Sozu for Business',
+      icon: <Building2 className="h-5 w-5" />,
       defaultOpen: false,
       slug: 'entrepreneurs',
       items: [
@@ -115,6 +195,14 @@ export function DocsSidebar() {
   
   // Determine which section should be open based on current pathname
   const getCurrentSection = useCallback(() => {
+    if (pathname.includes('/overview')) return 'overview'
+    if (pathname.includes('/architecture')) return 'architecture'
+    if (pathname.includes('/contracts')) return 'contracts'
+    if (pathname.includes('/planning')) return 'planning'
+    if (pathname.includes('/integrations')) return 'integrations'
+    if (pathname.includes('/requirements')) return 'requirements'
+    if (pathname.includes('/operations')) return 'operations'
+    if (pathname.includes('/reference')) return 'reference'
     if (pathname.includes('/credit')) return 'credit'
     if (pathname.includes('/wallet')) return 'wallet'
     if (pathname.includes('/how-it-works')) return 'how-it-works'

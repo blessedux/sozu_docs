@@ -1,15 +1,15 @@
 ---
-title: For Entrepreneurs
-description: Access credit without banks - Create a wallet instantly, receive credit, and build your Trust Score
+title: Sozu for Business
+description: Merchant settlement, revenue in stablecoins, and credit for businesses — one dashboard for payments and growth
 ---
 
-# For Entrepreneurs
+# Sozu for Business
 
-Sozu Capital empowers entrepreneurs with access to credit without traditional banks. Create a wallet instantly with no ID upload, receive credit, track repayments, and build your Trust Score.
+Sozu gives businesses a single stack for receiving payments in stablecoins (USDC), managing revenue, and accessing credit. Create a wallet, receive funds from donors or customers, track repayments, and build your Trust Score. DeFi yield on idle balance; pay or withdraw through local anchors.
 
 ## Overview
 
-Access credit without banks. Create a wallet instantly with no ID upload. Receive credit, track repayments, and build your Trust Score. Manage finances privately and self-custodially. Withdraw or pay through MercadoPago or any local anchor.
+Receive payments in USDC, track revenue, and manage payouts from one dashboard. Sozu for Business is built for SMEs and operators in Latam: self-custodial control, transparent terms, and credit that scales with your trust score. Withdraw or pay through MercadoPago or any local anchor.
 
 ## Getting Started
 
@@ -17,7 +17,6 @@ Access credit without banks. Create a wallet instantly with no ID upload. Receiv
 
 **Instant Wallet Creation:**
 
-- No ID upload required
 - Passkey authentication (fingerprint/face ID)
 - Self-custodial Stellar wallet
 - Ready in seconds
@@ -67,7 +66,6 @@ Access credit without banks. Create a wallet instantly with no ID upload. Receiv
 **Trust-Based Credit Lines:**
 
 - Credit based on trust score
-- No traditional credit checks
 - Transparent terms
 - Flexible repayment options
 
@@ -122,10 +120,9 @@ Access credit without banks. Create a wallet instantly with no ID upload. Receiv
 
 **Privacy-First Design:**
 
-- No KYC required
 - Private financial data
 - Self-custodial architecture
-- No data sharing
+- Minimal data sharing
 
 ### Global Access
 
@@ -179,4 +176,4 @@ Access credit without banks. Create a wallet instantly with no ID upload. Receiv
 
 ---
 
-**Ready to access credit without banks?** Create your Sozu Wallet today and start building your financial future.
+**Ready to get started?** Create your Sozu Wallet today and start receiving payments in stablecoins.
