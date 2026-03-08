@@ -1,179 +1,42 @@
 ---
 title: Sozu for Business
-description: Merchant settlement, revenue in stablecoins, and credit for businesses — one dashboard for payments and growth
+description: Merchant settlement, revenue in USDC, revenue-based credit — one dashboard for payments and growth (Year 2+)
 ---
 
 # Sozu for Business
 
-Sozu gives businesses a single stack for receiving payments in stablecoins (USDC), managing revenue, and accessing credit. Create a wallet, receive funds from donors or customers, track repayments, and build your Trust Score. DeFi yield on idle balance; pay or withdraw through local anchors.
+Sozu for Business is the **merchant-facing stack** for receiving payments in stablecoins (USDC), managing revenue, and accessing credit. It is part of the **Year 2+** strategy: after we earn distribution and trust through NGO microcredit and recipient wallets (Year 1), we expand into **merchant settlement** and **revenue-based credit**. One dashboard, one USDC balance, yield on idle funds, and (later) payouts and offramping through fiat bridges and Sozu Anchor.
 
 ## Overview
 
-Receive payments in USDC, track revenue, and manage payouts from one dashboard. Sozu for Business is built for SMEs and operators in Latam: self-custodial control, transparent terms, and credit that scales with your trust score. Withdraw or pay through MercadoPago or any local anchor.
+- **Receive payments in USDC** — Customers pay; merchants receive USDC in their Sozu Business Wallet with instant settlement.
+- **One balance, one transaction list** — Revenue tracking, categorization, and export for accounting.
+- **Payouts** — Pay providers, employees, or vendors from the same USDC wallet.
+- **DeFi yield** — Idle balance earns yield in a high-yield liquid vault; Sozu earns a share of yield, not rent on transactions.
+- **Revenue-based credit** — Credit that scales with wallet payment history and trust, not traditional credit checks.
+- **Fiat bridge aggregator** — Off-ramping (T+1/T+2) as we aggregate fiat bridges and move toward anchor readiness.
 
-## Getting Started
+Same stack as the NGO dashboard: programmable dollar payments, transparency on-chain, and yield by default. Every design choice (wallet, dashboard, APIs) is built so merchants get a **complete** stack: receive, hold, yield, offramp, and (later) pay and get paid.
 
-### 1. Create Your Wallet
+## When It Ships
 
-**Instant Wallet Creation:**
+**Year 2** in the development roadmap: expand from aid distribution into local commerce. Year 1 focuses on one NGO, one country (Argentina), and the recipient wallet + offramp + repayment tracking. Merchants and business dashboards follow once the foundation is live.
 
-- Passkey authentication (fingerprint/face ID)
-- Self-custodial Stellar wallet
-- Ready in seconds
+See [Overview](/concepts/overview) for the full strategy (Year 1 / Year 2 / Year 4) and [How It Works](/concepts/how-it-works) for the flow from NGO to wallets and offramping.
 
-**Steps:**
+## Getting Started (When Available)
 
-1. Visit Sozu Capital
-2. Tap to create wallet with passkey
-3. Receive your Stellar wallet address
-4. Start receiving funds immediately
+1. **Create your Business Wallet** — Self-custodial USDC wallet; passkey/MPC; same security model as Sozu Wallet for recipients.
+2. **Receive USDC** — Accept payments from customers or donors; instant settlement on Stellar.
+3. **Track revenue** — Dashboard shows inflows, categories, and exports for accounting.
+4. **Earn yield** — Idle USDC in the vault earns yield automatically.
+5. **Access credit** — Revenue-based credit using wallet payment history and Trust Score.
+6. **Offramp** — Withdraw to local fiat via fiat bridge aggregator; future Sozu Anchor for direct on/off ramp where regulation allows.
 
-### 2. Complete Education
+## Philosophy
 
-**Unlock Credit Eligibility:**
+- **Non-custodial** — Merchants keep control; we never custody principal.
+- **Transparent** — On-chain USDC, Stellar Explorer links, clear audit.
+- **Merchant-centric** — We earn on value-add (e.g. yield share), not on rent.
 
-- Complete financial literacy courses
-- Learn about DeFi and credit management
-- Understand repayment terms
-- Build knowledge for success
-
-**Education Topics:**
-
-- Financial basics
-- Credit management
-- Repayment strategies
-- Business planning
-- Trust score building
-
-### 3. Build Your Trust Score
-
-**Community Vouching System:**
-
-- Get vouched by community members
-- Build reputation over time
-- Higher trust score = better credit terms
-- Transparent trust network
-
-**How Trust Score Works:**
-
-- Start with base score
-- Increase through vouches
-- Maintain through good repayment
-- Access higher credit limits
-
-### 4. Receive Credit
-
-**Trust-Based Credit Lines:**
-
-- Credit based on trust score
-- Transparent terms
-- Flexible repayment options
-
-**Credit Features:**
-
-- Interest rates scale with trust score
-- Credit amounts increase with reputation
-- Good behavior unlocks bigger funds
-- No hidden fees
-
-## Managing Your Credit
-
-### Track Repayments
-
-**Real-Time Monitoring:**
-
-- View credit balance
-- Track repayment schedule
-- See accrued interest
-- Monitor trust score impact
-
-### Make Payments
-
-**Flexible Payment Options:**
-
-- Pay through wallet
-- Use MercadoPago integration
-- Local anchor support
-- Multiple payment methods
-
-### Build Credit History
-
-**Reputation Building:**
-
-- On-time repayments increase trust score
-- Consistent behavior unlocks higher limits
-- Community recognition
-- Long-term credit access
-
-## Financial Management
-
-### Self-Custodial Control
-
-**Your Keys, Your Funds:**
-
-- Full control over your assets
-- No custodial risk
-- Private transaction history
-- Self-managed finances
-
-### Privacy Protection
-
-**Privacy-First Design:**
-
-- Private financial data
-- Self-custodial architecture
-- Minimal data sharing
-
-### Global Access
-
-**Worldwide Interoperability:**
-
-- Withdraw through local anchors
-- Pay through MercadoPago
-- Send funds globally
-- Access from anywhere
-
-## Success Stories
-
-### Building Your Business
-
-**Real Entrepreneurs, Real Results:**
-
-- Access capital without banks
-- Build credit history
-- Scale your business
-- Empower your community
-
-### Community Impact
-
-**Local Economic Growth:**
-
-- Support local economy
-- Create jobs
-- Build trust networks
-- Financial inclusion
-
-## Support & Resources
-
-### Getting Help
-
-**Support Channels:**
-
-- Documentation and guides
-- Community forums
-- Direct support contact
-- Educational resources
-
-### Best Practices
-
-**Tips for Success:**
-
-- Complete education courses
-- Build trust score early
-- Make on-time repayments
-- Engage with community
-- Plan for growth
-
----
-
-**Ready to get started?** Create your Sozu Wallet today and start receiving payments in stablecoins.
+For the full product vision and roadmap, see [Overview](/concepts/overview).

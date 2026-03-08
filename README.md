@@ -6,7 +6,7 @@
 
 ## What the docs cover
 
-The documentation is aligned with the [SozuPay MVP docs](https://github.com/blessedux/sozupay_mvp/tree/main/docs). It is grouped by purpose:
+The documentation is ali gned with the [SozuPay MVP docs](https://github.com/blessedux/sozupay_mvp/tree/main/docs). It is grouped by purpose:
 
 | Section | Contents |
 |--------|----------|
